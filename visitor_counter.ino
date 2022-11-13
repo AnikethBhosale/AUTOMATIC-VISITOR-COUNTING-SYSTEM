@@ -1,5 +1,5 @@
 #include<LiquidCrystal.h>
-LiquidCrystal lcd(2,3,7,6,5,4);
+LiquidCrystal lcd(2,3,4,5,6,7);
 
 #define in 8
 #define out 9
@@ -13,13 +13,13 @@ void setup()
 {
   
   lcd.begin(16,2);
-  lcd.print("Visitor Counter");
+  lcd.print("COUNT");
   delay(2000);
   pinMode(in, INPUT);
   pinMode(out, INPUT);
   pinMode(led, OUTPUT);
   lcd.clear();
-  lcd.print("Person In Room:");
+  lcd.print("visitor deteced:");
   lcd.setCursor(0,1);
   lcd.print(count);
    pinMode(12,OUTPUT);
@@ -36,31 +36,30 @@ void loop()
   {
     count++;
     lcd.clear();
-    lcd.print("Person In Room:");
+    lcd.print("visitor detected:");
     lcd.setCursor(0,1);
     lcd.print(count);
-    delay(1000);
+    delay(900);
   }
   
   if(out_value == LOW)
   {
     count--;
     lcd.clear();
-    lcd.print("Person In Room:");
+    lcd.print("visitor detected:");
     lcd.setCursor(0,1);
     lcd.print(count);
-    delay(1000);
+    delay(900);
   }
- 
   
   if(count==0)
   {
     lcd.clear();
     digitalWrite(led, LOW);
     lcd.clear();
-    lcd.print("Nobody In Room");
+    lcd.print("room empty");
     lcd.setCursor(0,1);
-    lcd.print("Light is Off");
+    lcd.print("Lights turned Off");
     delay(100);
   }
   
