@@ -44,7 +44,7 @@ void loop()
   
   if(out_value == LOW)
   {
-    count++;
+    count--;
     lcd.clear();
     lcd.print("visitor detected:");
     lcd.setCursor(0,1);
