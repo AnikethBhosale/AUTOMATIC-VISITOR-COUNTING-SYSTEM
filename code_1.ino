@@ -19,7 +19,7 @@ void setup()
   pinMode(out, INPUT);
   pinMode(led, OUTPUT);
   lcd.clear();
-  lcd.print("Visitors Present:");
+  lcd.print("Visitors detected:");
   lcd.setCursor(0,1);
   lcd.print(count);
    pinMode(12,OUTPUT);
@@ -36,7 +36,7 @@ void loop()
   {
     count++;
     lcd.clear();
-    lcd.print("Some one Enter:");
+    lcd.print("visitors detected:");
     lcd.setCursor(0,1);
     lcd.print(count);
     delay(1000);
@@ -46,7 +46,7 @@ void loop()
   {
     count--;
     lcd.clear();
-    lcd.print("Some One Enter:");
+    lcd.print("visitors detected:");
     lcd.setCursor(0,1);
     lcd.print(count);
     delay(1000);
@@ -58,9 +58,9 @@ void loop()
     lcd.clear();
     digitalWrite(led, LOW);
     lcd.clear();
-    lcd.print("Nobody In Room");
+    lcd.print("Room empty");
     lcd.setCursor(0,1);
-    lcd.print("NO body In the Room");
+    lcd.print("lights tun off");
     delay(100);
   }
   
